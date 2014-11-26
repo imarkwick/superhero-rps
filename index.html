@@ -1,9 +1,9 @@
 <html>
 
-	<head>
-	<style>
+  <head>
+  <style>
 
-		body {
+    body {
       font-family: 'Helvetica Neue';
       margin: 15px 0 0 30px;
     }
@@ -24,26 +24,26 @@
       text-transform: none;
     }
 
-    #results {
-      list-style: none;
-    }
+    ul {
+      list-style-type: none;
+    }
 
-    #results li {
-      background: #999;
-      color: #fff;
-      font-size: 24px;
-      border-radius: 8px;
-      padding: 5px;
-      width: 80%;
-      margin-bottom: 10px;
-    }
+    #results li {
+      background: #999;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 8px;
+      padding: 5px;
+      width: 80%;
+      margin-bottom: 10px;
+    } 
 
-	</style>
-	</head>
-	
-	<body>
-	<center>
-	  <h1>Superheroes Game</h1>
+  </style>
+  </head>
+  
+  <body>
+  <center>
+    <h1>Superheroes Game</h1>
     <div class='choices'>
       <img src="images/black_widow.jpg" data-pick='black widow'>
       <img src="images/hulk.jpg" data-pick='hulk'>
@@ -51,11 +51,11 @@
       <img src="images/spiderman.jpeg" data-pick='spiderman'>
       <img src="images/thor.jpg" data-pick='thor'>
     </div>
-    <h2 id="results"></h2>
+    <ul id="results"></ul>
    </center>
 
-		<script src='lib/Superheroes.js'></script>
-		<script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='lib/Superheroes.js'></script>
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
 
     <script>
 
@@ -67,18 +67,18 @@
 
       $('.choices img').on('click',function(){
 
-        izzy.picks("thor");
+        izzy.picks($(this).data('pick'));
         mishal.picks('spiderman');
 
-        $('#results').html(game.winningMessage());
+        $('#results').prepend('<li>'+game.winningMessage()+'</li>');
  
       });
 
-    });
+    })
 
     </script>
 
-	</body>
+  </body>
 </html>
 
 
