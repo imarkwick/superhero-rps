@@ -6,8 +6,6 @@ Player.prototype.picks = function(pick) {
 	this.pick = pick;
 };
 
-
-
 function Game(player1, player2) {
 	this.player1 = player1;
 	this.player2 = player2;
@@ -15,7 +13,8 @@ function Game(player1, player2) {
 
 Game.prototype.winner = function() {
 	if(this.player1.pick === this.player2.pick) {return null}
-	if(this.PAIRS[this.player1.pick]['beats'] === this.player2.pick){
+
+	if (this._superheroMove(this.player1.pick, this.player2.pick)) {
 		return this.player1;
 	}
 	else {
@@ -23,10 +22,16 @@ Game.prototype.winner = function() {
 	}
 };
 
-Game.prototype.PAIRS = {
-	 	rock:  { beats: "scissors" }, 
-	 	paper: { beats: "rock"}, 
-	 	scissors: { beats: "paper"} 
+Game.prototype.RULES = {
+	 	'iron man':  { 'spiderman': 'vaporises', 'black widow': 'breaks' },
+	 	'hulk': { 'iron man': 'smashes', 'thor': 'crushes' },
+	 	'black widow': { 'thor': 'seduces', 'hulk': 'ass kicks' },
+	 	'thor': { 'iron man': 'beats', 'spiderman': 'defeats'  },
+	 	'spiderman': { 'hulk': 'fires at', 'black widow': 'shoots' }
+};
+
+Game.prototype._superheroMove = function(pick, opponentPick) {
+	return this.RULES[pick][opponentPick];
 };
 
 
