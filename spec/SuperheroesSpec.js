@@ -1,4 +1,4 @@
-describe("Rock-Paper-Scissors", function() {
+describe("superheroes", function() {
   var player1, player2, game;
   
   beforeEach(function() {
@@ -145,66 +145,31 @@ describe("Rock-Paper-Scissors", function() {
         expect(game.winner()).toBe(player2);
       });
     });
-//     describe('paper', function() {
-
-//       it('should beat rock', function() {
-
-//         player1.picks('paper');
-//         player2.picks('rock');
-//         expect(game.winner()).toBe(player1);
-
-//       });
-
-//       it('should lose to scissors', function() {
-
-//         player1.picks('paper');
-//         player2.picks('scissors');
-//         expect(game.winner()).toBe(player2);
-
-//       });
-
-//     });
-
-//     describe('scissors', function() {
-
-//       it('should beat paper', function() {
-
-//         player1.picks('scissors');
-//         player2.picks('paper');
-//         expect(game.winner()).toBe(player1);
-
-//       });
-
-//       it('should lose to rock', function() {
-
-//         player1.picks('scissors');
-//         player2.picks('rock');
-//         expect(game.winner()).toBe(player2);
-
-//       });
-
-//     });
-
-//   });
-
-//   describe('draws', function() {
-
-//     describe('any identical picks', function() {
-
-//       it('should result in no winner', function() {
-
-//         var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
-//           player1.picks(x);
-//           player2.picks(x);
-//           return game.winner();
-//         });
-
-//         expect(drawGameResults).toEqual([null, null, null]);
-
-//       });
-
-//     });
-
   });
 
+  describe('draws', function() {
+
+    describe('any identical picks', function() {
+
+      it('should result in no winner', function() {
+
+        var drawGameResults = ['iron man', 'hulk', 'black widow', 'thor', 'spiderman'].map(function(x) {
+          player1.picks(x);
+          player2.picks(x);
+          return game.winner();
+        });
+
+        expect(drawGameResults).toEqual([null, null, null, null, null ]);
+      });
+    });
+  });
+
+  describe('victory messages', function() {
+
+    it('should return character\'s name, verb and loser\'s character', function() {
+      player1.picks('iron man')
+      player2.picks('spiderman')
+      expect(game.winningMessage()).toEqual('iron man vaporises spiderman');
+    });
+  });
 });

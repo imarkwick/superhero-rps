@@ -1,8 +1,85 @@
 <html>
-<body>
 
-<script>
+	<head>
+	<style>
 
-</script>
-</body>
+		body {
+      font-family: 'Helvetica Neue';
+      margin: 15px 0 0 30px;
+    }
+
+    .choices img {
+      width: 15%;
+      margin-right: 2.5%;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: 0.5s all ease;
+    }
+    
+    .choices img:hover {
+      opacity: 1;
+    }
+
+    h2, h3 {
+      text-transform: none;
+    }
+
+    #results {
+      list-style: none;
+    }
+
+    #results li {
+      background: #999;
+      color: #fff;
+      font-size: 24px;
+      border-radius: 8px;
+      padding: 5px;
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+	</style>
+	</head>
+	
+	<body>
+	<center>
+	  <h1>Superheroes Game</h1>
+    <div class='choices'>
+      <img src="images/black_widow.jpg" data-pick='black widow'>
+      <img src="images/hulk.jpg" data-pick='hulk'>
+      <img src="images/Iron_man.jpg" data-pick='iron man'>
+      <img src="images/spiderman.jpeg" data-pick='spiderman'>
+      <img src="images/thor.jpg" data-pick='thor'>
+    </div>
+    <h2 id="results"></h2>
+   </center>
+
+		<script src='lib/Superheroes.js'></script>
+		<script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+
+    <script>
+
+    $(document).ready(function(){
+
+      var izzy = new Player("izzy");
+      var mishal = new Player("mishal");
+      var game = new Game(izzy, mishal);
+
+      $('.choices img').on('click',function(){
+
+        izzy.picks("thor");
+        mishal.picks('spiderman');
+
+        $('#results').html(game.winningMessage());
+ 
+      });
+
+    });
+
+    </script>
+
+	</body>
 </html>
+
+
+
