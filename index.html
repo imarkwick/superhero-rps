@@ -36,6 +36,7 @@
       padding: 5px;
       width: 80%;
       margin-bottom: 10px;
+      display: none;
     } 
 
   </style>
@@ -65,12 +66,14 @@
       var mishal = new Player("mishal");
       var game = new Game(izzy, mishal);
 
-      $('.choices img').on('click',function(){
+      $('.choices img').on('click', function(){
 
         izzy.picks($(this).data('pick'));
         mishal.picks('spiderman');
 
-        $('#results').prepend('<li>'+game.winningMessage()+'</li>');
+      $('<li>'+game.winningMessage()+'</li>').prependTo('#results').fadeIn(800);
+      $('li:nth-child(5)').fadeOut(1500).remove();
+
  
       });
 
