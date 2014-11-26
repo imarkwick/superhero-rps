@@ -12,8 +12,10 @@
       width: 15%;
       margin-right: 2.5%;
       cursor: pointer;
-      opacity: 0.5;
+      opacity: 0.6;
       transition: 0.5s all ease;
+      width: 300px;
+      height: 200px;
     }
     
     .choices img:hover {
@@ -30,7 +32,7 @@
 
     #results li {
       background: #999;
-      color: #fff;
+      color: black;
       font-size: 14px;
       border-radius: 8px;
       padding: 5px;
@@ -49,7 +51,7 @@
       <img src="images/black_widow.jpg" data-pick='black widow'>
       <img src="images/hulk.jpg" data-pick='hulk'>
       <img src="images/Iron_man.jpg" data-pick='iron man'>
-      <img src="images/spiderman.jpeg" data-pick='spiderman'>
+      <img src="images/spiderman.jpg" data-pick='spiderman'>
       <img src="images/thor.jpg" data-pick='thor'>
     </div>
     <ul id="results"></ul>
@@ -71,12 +73,11 @@
         izzy.picks($(this).data('pick'));
         mishal.picks('spiderman');
 
-      $('<li>'+game.winningMessage()+'</li>').prependTo('#results').fadeIn(800);
-      $('li:nth-child(5)').fadeOut(1500).remove();
-
- 
+        $('<li>'+game.winningMessage()+'</li>').prependTo('#results').fadeIn(800);
+        $('li:nth-child(5)').fadeOut(1500, function(){
+          $(this).remove();
+        });
       });
-
     })
 
     </script>
