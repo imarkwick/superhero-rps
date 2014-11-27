@@ -15,11 +15,11 @@ Game.prototype.winner = function() {
 };
 
 Game.prototype.RULES = {
-	 	'iron man':  { 'spiderman': 'vaporises', 'black widow': 'breaks' },
-	 	'hulk': { 'iron man': 'smashes', 'thor': 'crushes' },
-	 	'black widow': { 'thor': 'seduces', 'hulk': 'ass kicks' },
-	 	'thor': { 'iron man': 'beats', 'spiderman': 'defeats'  },
-	 	'spiderman': { 'hulk': 'fires at', 'black widow': 'shoots' }
+	 	'Iron Man':  { 'Spiderman': 'vaporises', 'Black Widow': 'breaks' },
+	 	'Hulk': { 'Iron Man': 'smashes', 'Thor': 'crushes' },
+	 	'Black Widow': { 'Thor': 'seduces', 'Hulk': 'ass kicks' },
+	 	'Thor': { 'Iron Man': 'annihilates', 'Spiderman': 'defeats'  },
+	 	'Spiderman': { 'Hulk': 'fires at', 'Black Widow': 'shoots' }
 };
 
 Game.prototype._superheroMove = function(pick, opponentPick) {
@@ -38,7 +38,6 @@ Game.prototype.winningMessage = function() {
 	}
 
 	return result;
-
 };
 
 Game.prototype.loser = function() {
@@ -50,7 +49,7 @@ Game.prototype._victoryVerb = function(pick, opponentPick) {
 };
 
 Game.prototype.computer = function() {
-	var random = ["iron man", "hulk", "black widow", "thor", "spiderman"];
+	var random = ["Iron Man", "Hulk", "Black Widow", "Thor", "Spiderman"];
 	var opponentPick = random[Math.floor(Math.random()*random.length)];
 	return opponentPick;
 };

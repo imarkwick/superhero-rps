@@ -11,7 +11,7 @@
     body {
       font-family: 'Oswald';
       margin: 15px 0 0 30px;
-      background-image: url(images/background.gif);
+      /*background-image: url(images/background.gif);*/
       margin: 50px 0 0 30px;
     }
 
@@ -57,6 +57,27 @@
       display: none;
     } 
 
+    .button {
+      display: inline-block;
+      width: 110px;
+      cursor: pointer;
+      font-size: 14px;
+      background-color: #000000;
+      border: 2px solid white;
+      color: white;
+      padding: 5px 5px;
+      text-align: center;
+      border-radius: 4px;
+      margin-left: 5px;
+      margin-right: 5px;
+      text-shadow: 0 0 2px rgba(0,0,0,0.4);
+      margin-bottom: 10px
+    }
+
+    .button:hover {
+
+    }
+
   </style>
   
 
@@ -65,12 +86,14 @@
   <body>
   <center>
     <h1>SUPERHERO vs SUPERHERO</h1>
+    <a href='/rules' id='rules' class='button'>RULES</a>
+    <br>
     <div class='choices'>
-      <img src="images/black_widow.jpg" data-pick='black widow'>
-      <img src="images/hulk.jpg" data-pick='hulk'>
-      <img src="images/Iron_man.jpg" data-pick='iron man'>
-      <img src="images/spiderman.jpg" data-pick='spiderman'>
-      <img src="images/thor.jpg" data-pick='thor'>
+      <img src="images/black_widow.jpg" data-pick='Black Widow'>
+      <img src="images/hulk.jpg" data-pick='Hulk'>
+      <img src="images/Iron_man.jpg" data-pick='Iron Man'>
+      <img src="images/spiderman.jpg" data-pick='Spiderman'>
+      <img src="images/thor.jpg" data-pick='Thor'>
     </div>
     <ul id="results"></ul>
    </center>
