@@ -1,11 +1,14 @@
 <html>
-
+  <title>GAMETIME!</title>
+  <link rel="icon" href="favicon.ico" type="images/favicon.ico" />
   <head>
   <style>
 
     body {
       font-family: 'Helvetica Neue';
       margin: 15px 0 0 30px;
+      background-image: url(images/background.gif);
+      margin: 50px 0 0 30px;
     }
 
     .choices img {
@@ -16,14 +19,16 @@
       transition: 0.5s all ease;
       width: 300px;
       height: 200px;
+      border-style: solid;
+      border-color: #000000;
     }
     
     .choices img:hover {
       opacity: 1;
     }
 
-    h2, h3 {
-      text-transform: none;
+    h1 {
+      font-family:'Oswald', sans-serif;
     }
 
     ul {
@@ -46,7 +51,7 @@
   
   <body>
   <center>
-    <h1>Superheroes Game</h1>
+    <h1>Superhero vs Superhero</h1>
     <div class='choices'>
       <img src="images/black_widow.jpg" data-pick='black widow'>
       <img src="images/hulk.jpg" data-pick='hulk'>
