@@ -56,9 +56,9 @@ Game.prototype.computer = function() {
 
 Game.prototype.message = function() {
 	if(this.winner() === this.player1){
-		return "YOU WIN.... "
+		return "YOU WIN!      "
 	} else {
-		return "YOU LOSE...."
+		return "YOU LOSE!      "
 	}
 };
 
