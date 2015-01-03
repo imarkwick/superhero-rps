@@ -10,6 +10,7 @@ My pair's version was a superhero game against the computer, where players could
 - Black Widow
 - Thor
 - Spiderman
+
 The results of who beats who is displayed on a separate 'Rules' page.
 
 To view tests, clone the repo and run SpecRunner from the command line;
