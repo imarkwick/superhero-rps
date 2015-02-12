@@ -1,10 +1,11 @@
 # Superhero Javascript
 
-This was the first week of learning javascript at Makers Academy. 
+This was the first week of learning javascript at Makers Academy and the challenge was to pair program and produce a rock, paper, lizard, spock game deployed on [Heroku](https://limitless-wildwood-5139.herokuapp.com/).
 
-The challenge was to pair program and produce a rock, paper, lizard, spock game on Heroku.
+## Game Rules
 
-My pair's version was a superhero game against the computer, where players could choose:
+A superhero game against the computer, where characters include:
+
 - Iron Man
 - Hulk
 - Black Widow
@@ -13,14 +14,30 @@ My pair's version was a superhero game against the computer, where players could
 
 The results of who beats who is displayed on a separate 'Rules' page.
 
-To view tests, clone the repo and run SpecRunner from the command line;
+## Technologies used:
+
+* Javascript
+* jQuery
+* Sinatra
+* Jasmine
+
+## How to run tests:
 
 ```sh
-$ open SpecRunner.html
+$ git clone https://github.com/imarkwick/superhero-rps.git
+$ cd superhero-rps
+$ rspec
 ```
 
-To open in the browser and play superhero rock paper scissors, use the rackup command and visit localhost/9292;
+## How to run the server:
 
 ```sh
+$ git clone https://github.com/imarkwick/superhero-rps.git
+$ cd superhero-rps
+$ bundle install
 $ rackup
 ```
+
+## Pair partner:
+
+[Mishal Ismal](https://github.com/mishal1)
